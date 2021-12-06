@@ -17,6 +17,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
   let mt = document.getElementById("missionTarget")
   mt.innerHTML += `<h2>Mission Destination</h2>`
   mt.innerHTML += `<ol>`
+  mt.innerHTML += `</ol>`
   mt.innerHTML += `<li>Name:${name} </li>`
   mt.innerHTML += `<li>Diameter: ${diameter} </li>`
   mt.innerHTML += `<li>Star: ${star}</li>`
