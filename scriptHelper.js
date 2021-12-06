@@ -15,16 +15,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                 <img src="">
    */
   let mt = document.getElementById("missionTarget")
-  mt.innerHTML += `<h2>Mission Destination</h2>`
-  mt.innerHTML += `<ol>`
-  mt.innerHTML += `</ol>`
-  mt.innerHTML += `<li>Name:${name} </li>`
-  mt.innerHTML += `<li>Diameter: ${diameter} </li>`
-  mt.innerHTML += `<li>Star: ${star}</li>`
-  mt.innerHTML += `<li>Distance from Earth: ${distance} </li>`
-  mt.innerHTML += `<li>Number of Moons: ${moons}</li>`
-  mt.innerHTML += `</ol>`
-  mt.innerHTML += `<img src=${imageUrl}>`
+  mt.innerHTML += `<h2>Mission Destination</h2><ol><li>Name:${name} </li<li>Diameter: ${diameter} </li<li>Star: ${star}</li<li>Distance from Earth: ${distance} </li<li>Number of Moons: ${moons}</li</ol<img src=${imageUrl}>`
 }
 
 function validateInput(testInput) {
