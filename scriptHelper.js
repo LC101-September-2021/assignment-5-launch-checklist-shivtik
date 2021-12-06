@@ -35,11 +35,10 @@ function validateInput(testInput) {
     } else if (typeof testInput === 'number'){
         result = "Is a Number"
         console.log( testInput, "is num")
+    } else if (testInput === ""){
+        result = "Empty"
+        console.log(testInput, "is empty")
     }
-    // } else if (isNaN(testInput)){
-    //     result = "Empty"
-    //     console.log(testInput, "is empty")
-    // }
     
     return result
    
@@ -57,29 +56,33 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
     
     pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`
-    copilotStatus.innerHTML = `Copilot ${copilot} is ready for launch`
+    copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`
 
     if (fuelLevel < 10000) {
         list.style.visibility = 'visible'
-        fuelStatus.innerHTML = `Not enough fuel for the journey`
+        fuelStatus.innerHTML = `Fuel level too low for launch`
         launchStatus.innerHTML = "Shuttle Not Ready for Launch"
-        launchStatus.style.color = 'red'
+        launchStatus.style.color = 'rgb(199, 37, 78)'
         status = false
-
+        
+    } else {
+        fuelStatus.innerHTML = `Fuel level high enough for launch`
     }
 
     if (cargoLevel > 10000) {
         list.style.visibility = 'visible'
-        cargoStatus.innerHTML = `Too much mass for the shuttle to take off`
+        cargoStatus.innerHTML = `Cargo mass too heavy for launch`
         launchStatus.innerHTML = "Shuttle Not Ready for Launch"
-        launchStatus.style.color = 'red'
+        launchStatus.style.color = 'rgb(199, 37, 78)'
         status = false
-
+        
+    } else {
+        cargoStatus.innerHTML = `Cargo mass low enough for launch`
     }
 
     if (status) {
         launchStatus.innerHTML = "Shuttle is Ready for Launch"
-        launchStatus.style.color = 'green'
+        launchStatus.style.color = 'rgb(65, 159, 106)'
     }
    
 }
