@@ -16,7 +16,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
    */
   let mt = document.getElementById("missionTarget")
   mt.innerHTML += `<h2>Mission Destination</h2>`
-  mt.innerHTML += `<ol type="1">`
+  mt.innerHTML += `<ol>`
   mt.innerHTML += `<li>Name:${name} </li>`
   mt.innerHTML += `<li>Diameter: ${diameter} </li>`
   mt.innerHTML += `<li>Star: ${star}</li>`
@@ -40,10 +40,10 @@ function validateInput(testInput) {
         result = "Not a Number"
     }
 
-    if (typeof testInput === 'number'){
+    if (Number(testInput)){
         result = "Is a Number"
     }
-    
+
     if (testInput === ""){
         result = "Empty"
     }
