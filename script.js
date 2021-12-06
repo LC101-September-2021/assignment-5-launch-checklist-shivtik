@@ -8,6 +8,7 @@ window.addEventListener("load", function() {
    let cargo = document.querySelector("#launchForm > form > div:nth-child(4) > label > input[type=text]")
    let submit = document.getElementById("formSubmit")
    let list = document.getElementById("faultyItems")
+   list.style.visibility = "hidden"
 
 
    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
@@ -26,8 +27,6 @@ window.addEventListener("load", function() {
 
    submit.addEventListener('click', (event) => {
     if (pilot.value === "" || copilot.value === "" || fuel.value === "" || cargo.value === "" ){
-        // console.log(1)
-        // console.log(pilot.value,copilot,fuel,cargo)
         event.preventDefault()
         this.alert("Fields are required")
     } else if ((validateInput(Number(pilot.value)) === "Not a Number") && (validateInput(Number(copilot.value)) === "Not a Number") && 
@@ -37,8 +36,6 @@ window.addEventListener("load", function() {
         formSubmission(document, list, pilot.value, copilot.value, fuel.value, cargo.value)
         event.preventDefault()
     } else {
-        // console.log(3)
-        // console.log(pilot.value,copilot.value,fuel.value,cargo.value)
            event.preventDefault()
            this.alert("Make sure to enter valid information for each field")
        }
